@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:#fff;padding:28px 36px 20px;width:960px;height:500px;color:#222;overflow:hidden}
+.title{font-size:22px;font-weight:700;color:#111;margin-bottom:2px;opacity:0;animation:fadeIn 0.4s ease forwards}
+.sub{font-size:11px;color:#999;margin-bottom:24px;opacity:0;animation:fadeIn 0.4s 0.2s ease forwards}
+.source{font-size:9px;color:#bbb;margin-top:18px;opacity:0;animation:fadeIn 0.4s 2s ease forwards}
+.row{display:flex;align-items:center;height:36px;margin-bottom:10px}
+.label{width:200px;text-align:right;padding-right:14px;font-size:11px;color:#888;opacity:0}
+.bar-area{flex:1;height:22px;background:#f5f5f5}
+.bar{height:100%;width:0;transition:none}
+.val{width:75px;padding-left:10px;font-size:13px;color:#888;opacity:0}
+.val.hi{color:#111;font-weight:700}
+.hl{background:#c0392b}
+.gr{background:#d5d5d5}
+.md{background:#999}
+.lt{background:#ccc}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes barGrow{from{width:0}to{width:var(--target)}}
+
+.row:nth-child(3) .label,.row:nth-child(3) .val{animation:fadeIn 0.3s 0.4s ease forwards}
+.row:nth-child(3) .bar{animation:barGrow 0.8s 0.5s cubic-bezier(0.25,0.46,0.45,0.94) forwards}
+.row:nth-child(4) .label,.row:nth-child(4) .val{animation:fadeIn 0.3s 0.6s ease forwards}
+.row:nth-child(4) .bar{animation:barGrow 0.6s 0.7s cubic-bezier(0.25,0.46,0.45,0.94) forwards}
+.row:nth-child(5) .label,.row:nth-child(5) .val{animation:fadeIn 0.3s 0.8s ease forwards}
+.row:nth-child(5) .bar{animation:barGrow 0.6s 0.9s cubic-bezier(0.25,0.46,0.45,0.94) forwards}
+.row:nth-child(6) .label,.row:nth-child(6) .val{animation:fadeIn 0.3s 1.0s ease forwards}
+.row:nth-child(6) .bar{animation:barGrow 0.5s 1.1s cubic-bezier(0.25,0.46,0.45,0.94) forwards}
+.row:nth-child(7) .label,.row:nth-child(7) .val{animation:fadeIn 0.3s 1.2s ease forwards}
+.row:nth-child(7) .bar{animation:barGrow 0.4s 1.3s cubic-bezier(0.25,0.46,0.45,0.94) forwards}
+.row:nth-child(8) .label,.row:nth-child(8) .val{animation:fadeIn 0.3s 1.4s ease forwards}
+.row:nth-child(8) .bar{animation:barGrow 0.3s 1.5s cubic-bezier(0.25,0.46,0.45,0.94) forwards}
+</style></head><body>
+<div class="title">당신의 프롬프트는 컨텍스트의 0.25%에 불과하다</div>
+<div class="sub">Claude Code 세션에서 컨텍스트 윈도우 구성 비중 (에이전틱 코딩 기준)</div>
+<div class="row"><div class="label">도구 출력 (파일, 검색 결과)</div><div class="bar-area"><div class="bar hl" style="--target:80%"></div></div><div class="val hi">80%+</div></div>
+<div class="row"><div class="label">이전 대화 기록</div><div class="bar-area"><div class="bar gr" style="--target:5%"></div></div><div class="val">~5%</div></div>
+<div class="row"><div class="label">시스템 프롬프트</div><div class="bar-area"><div class="bar md" style="--target:5%"></div></div><div class="val">~5%</div></div>
+<div class="row"><div class="label">도구 정의 (MCP 포함)</div><div class="bar-area"><div class="bar lt" style="--target:3%"></div></div><div class="val">~3%</div></div>
+<div class="row"><div class="label">CLAUDE.md / 프로젝트 설정</div><div class="bar-area"><div class="bar lt" style="--target:2%"></div></div><div class="val">~2%</div></div>
+<div class="row"><div class="label">당신의 프롬프트</div><div class="bar-area"><div class="bar gr" style="--target:0.5%"></div></div><div class="val">~0.25%</div></div>
+<div class="source">Source: "How Do Coding Agents Spend Your Money?" (OpenReview, 2025), Anthropic 내부 스킬 문서</div>
+</body></html>

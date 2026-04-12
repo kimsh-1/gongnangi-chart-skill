@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:#fff;width:1080px;height:1350px;padding:80px 72px 60px;display:flex;flex-direction:column}
+.slide-num{font-size:14px;color:#ccc;margin-bottom:40px}
+.title{font-size:40px;font-weight:700;color:#111;line-height:1.3;margin-bottom:40px}
+.compare{display:flex;gap:1px;background:#eee;flex:1;margin-bottom:40px}
+.side{background:#fff;flex:1;padding:32px 28px;display:flex;flex-direction:column}
+.side-label{font-size:14px;color:#999;margin-bottom:20px;letter-spacing:1px}
+.side-label.hi{color:#c0392b}
+.code-block{background:#fafafa;padding:16px 20px;font-size:16px;color:#555;line-height:1.8;flex:1}
+.code-block.bad{border-left:3px solid #d5d5d5}
+.code-block.good{border-left:3px solid #c0392b}
+.result{font-size:16px;color:#888;margin-top:16px;line-height:1.6}
+.result .hi{color:#c0392b;font-weight:700}
+.bottom{font-size:12px;color:#ccc}
+</style></head><body>
+<div class="slide-num">04 / 09</div>
+<div class="title">"프롬프트 문제"가 아니라<br>"컨텍스트 문제"였다</div>
+<div class="compare">
+<div class="side">
+  <div class="side-label">PROMPT ONLY</div>
+  <div class="code-block bad">고객에게 사과 메일을 써줘.<br>정중하게.</div>
+  <div class="result">"존경하는 고객님, 불편을 드려 대단히 죄송합니다."<br><br>→ 한국인이 읽으면 1초 만에 봇이라는 걸 안다</div>
+</div>
+<div class="side">
+  <div class="side-label hi">CONTEXT PROVIDED</div>
+  <div class="code-block good">발신: CS팀장 (40대 여성)<br>수신: 납품업체 (거래 3년차)<br>사안: 500개 중 23개 불량<br>관계: 유지가 중요</div>
+  <div class="result">→ 상황 인정 → 원인 설명 → 대책 → 보상 → 재발 방지<br><br><span class="hi">한국식 비즈니스 사과의 뉘앙스까지 살아난다</span></div>
+</div>
+</div>
+<div class="bottom">@gongnangi</div>
+</body></html>

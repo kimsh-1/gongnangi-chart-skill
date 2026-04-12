@@ -1,14 +1,16 @@
 # Gongnangi Chart Skill
 
-**Claude Code** consulting-style chart generator skill.
+**Claude Code** consulting-style visual content generator.
 
-McKinsey / Bain / BCG style HTML charts with one-command PNG export.
+McKinsey / Bain / BCG style charts, Instagram card news, and animated video — all from one skill.
 
-## What it does
+## 3 Output Modes
 
-- Generates publication-grade consulting charts as HTML
-- Converts to PNG via Windows Chrome headless (WSL compatible)
-- Supports: bar charts, comparison tables, A-vs-B layouts, process flows, timelines, level diagrams
+| Mode | Size | Format | Use Case |
+|------|------|--------|----------|
+| **Static Chart** | 960x500 | HTML → PNG | Reports, presentations |
+| **Card News** | 1080x1350 | HTML → PNG (8-9 slides) | Instagram carousel |
+| **Animation** | 960x500 | HTML → GIF / MP4 / APNG | Social media, presentations |
 
 ## Design Philosophy
 
@@ -17,19 +19,10 @@ McKinsey / Bain / BCG style HTML charts with one-command PNG export.
 - Grayscale base (`#d5d5d5`, `#888`, `#555`, `#222`, `#111`)
 - Single accent color: **red `#c0392b`** for the one insight that matters
 - Zero decoration: no emoji, no gradients, no rounded corners, no shadows
+- Action titles only (insight, not description)
 - Every pixel carries data
 
 ## Installation
-
-Copy `SKILL.md` into your Claude Code skills directory:
-
-```bash
-# From this repo
-cp SKILL.md ~/.claude/skills/consulting-chart/SKILL.md
-cp -r examples/ ~/.claude/skills/consulting-chart/examples/
-```
-
-Or clone directly:
 
 ```bash
 git clone https://github.com/kimsh-1/gongnangi-chart-skill.git ~/.claude/skills/consulting-chart
@@ -37,22 +30,10 @@ git clone https://github.com/kimsh-1/gongnangi-chart-skill.git ~/.claude/skills/
 
 ## Usage
 
-In Claude Code, invoke the skill:
-
 ```
 /consulting-chart 매출 성장률 비교 차트 만들어줘
-```
-
-## PNG Export
-
-Requires Google Chrome installed on Windows (WSL environment):
-
-```bash
-CHROME="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
-"$CHROME" --headless=new --disable-gpu --hide-scrollbars \
-    --screenshot="D:\\output\\chart.png" \
-    --window-size=960,500 \
-    "file:///D:/input/chart.html"
+/consulting-chart 컨텍스트 엔지니어링 카드뉴스 9장 만들어줘
+/consulting-chart 바 차트 올라가는 애니메이션 GIF 만들어줘
 ```
 
 ## Chart Types
@@ -66,23 +47,60 @@ CHROME="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 | Timeline | Horizontal axis with alternating labels |
 | Level Diagram | Stacked severity/priority bars |
 
+## Card News Structure (SCQA + Pyramid)
+
+| Slide | Role | Pattern |
+|-------|------|---------|
+| 1 | Hook | Big stat or provocative claim |
+| 2 | Situation | Context + quote |
+| 3 | Complication | Data bar chart |
+| 4 | Tension | A vs B comparison |
+| 5 | Pivot | Key turning point quote |
+| 6-7 | Evidence | Framework / data cards |
+| 8 | Synthesis | "So What" takeaway |
+| 9 | CTA | Save / follow |
+
+## Animation Pipeline
+
+```
+CSS animation HTML
+    → Chrome headless --virtual-time-budget (frame capture)
+    → ffmpeg encode
+        ├── GIF (palette-optimized)
+        ├── MP4 (H.264)
+        └── APNG (animated PNG)
+```
+
 ## Color Palette
 
 ```
 #111     Title, emphasis text
 #222     Body text
-#333     Table cells
 #555     Secondary bars
 #888     Labels, subtext
 #999     Subtitles
-#bbb     Source text
-#ccc     Arrows, connectors
-#d5d5d5  Default bars, numbers
-#eee     Dividers, grid background
-#f5f5f5  Bar background
-#fafafa  Table cell background
-#fdf5f5  Warning/danger background
 #c0392b  THE accent (only color allowed)
+#d5d5d5  Default bars, numbers
+#eee     Dividers
+#f5f5f5  Bar background
+```
+
+## Examples
+
+```
+examples/
+  bar-chart.html              Static bar chart
+  comparison-table.html       Static comparison table
+  process-flow.html           Static process flow
+  animated-barchart.html      CSS animated bar chart
+  animated-4axis.html         CSS animated 4-axis framework
+  capture-and-encode.ps1      Frame capture + encode script
+  cardnews/
+    01-hook.html              Card news hook slide
+    03-data-bar.html          Card news data slide
+    04-compare.html           Card news A vs B slide
+    08-synthesis.html         Card news synthesis slide
+    09-cta.html               Card news CTA slide
 ```
 
 ## License
