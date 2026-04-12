@@ -2,6 +2,12 @@
 
 컨설팅 스타일 차트, 인스타그램 카드뉴스, 애니메이션 영상을 HTML/CSS 코드로 생성하는 Claude Code 스킬입니다.
 
+## 데모 영상
+
+https://github.com/user-attachments/assets/skill-showcase.mp4
+
+> 위 영상이 안 보이면 [output-samples/skill-showcase.mp4](output-samples/skill-showcase.mp4)를 다운로드하세요.
+
 3가지 기능:
 - **공냥이 차트** — 컨설팅 스타일 데이터 차트
 - **공냥이 카드뉴스** — 인스타 카드뉴스 5가지 디자인
