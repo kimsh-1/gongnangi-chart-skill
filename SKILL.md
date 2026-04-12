@@ -289,9 +289,40 @@ Instagram 4:5 portrait (1080x1350). 사용자가 디자인을 선택하면 해�
 
 ---
 
-## Animation System
+## Animation System (Remotion)
 
-CSS animation HTML → Chrome headless frame capture → ffmpeg encode.
+React + Remotion으로 spring 물리 기반 애니메이션 → MP4/GIF 렌더.
+WSL에서 `LD_LIBRARY_PATH` 설정 필요 (install.sh가 자동 안내).
+
+### Remotion 컴포지션 목록
+
+**차트 애니메이션 (960x500)**
+| ID | 설명 | 애니메이션 |
+|---|------|----------|
+| BarChart | 수평 바 차트 | 바가 0에서 spring으로 올라옴 |
+| CountUp | 숫자 카운트업 | 0→목표 숫자 spring 감속 |
+| FourAxis | 4축 프레임워크 | 축이 하나씩 슬라이드인 |
+| CompareAB | A vs B 양방향 비교 | 양쪽 바가 동시에 성장 |
+| ProcessFlow | 프로세스 흐름 | 스텝이 순서대로 등장 + 화살표 |
+| QuoteReveal | 인용구 | 줄마다 굵기/색상 다르게 등장 |
+| TableReveal | 테이블 | 행이 순서대로 슬라이드인 |
+| NumberPulse | 숫자 강조 | 큰 숫자 팝인 + 반복 펄스 |
+| Timeline | 타임라인 | 축 그리기 + 노드 순서 등장 |
+
+**카드뉴스 영상화 (1080x1350 / 1920x1080)**
+| ID | 설명 | 애니메이션 |
+|---|------|----------|
+| CardCover | 커버 슬라이드 | 숫자 팝 → 제목 슬라이드인 → 설명 페이드 |
+| CardData | 데이터 슬라이드 | 제목 → 바 순차 성장 → 인사이트 등장 |
+| BarChart-Card | 바 차트 (카드뉴스 사이즈) | BarChart의 1080x1350 버전 |
+| CardCover-Wide | 커버 (와이드) | 1920x1080 가로형 |
+| CardData-Wide | 데이터 (와이드) | 1920x1080 가로형 |
+
+**쇼릴 (1920x1080)**
+| ID | 설명 |
+|---|------|
+| SkillIntro | 스킬 소개 (3 in 1) |
+| Showreel | 전체 합본 (Intro→Chart→CardNews→Outro) |
 
 ### Animation Patterns
 
