@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:#fff;padding:28px 36px 20px;width:960px;color:#222}
+.title{font-size:22px;font-weight:700;color:#111;margin-bottom:2px}
+.sub{font-size:11px;color:#999;margin-bottom:24px}
+.source{font-size:9px;color:#bbb;margin-top:18px}
+.flow{display:flex;align-items:flex-start;gap:0}
+.step{flex:1;text-align:center;padding:0 12px}
+.num{font-size:30px;font-weight:700;color:#d5d5d5;margin-bottom:6px}
+.num.hi{color:#c0392b}
+.step-title{font-size:12px;font-weight:700;color:#111;margin-bottom:4px}
+.step-desc{font-size:10px;color:#888;line-height:1.5}
+.arrow{display:flex;align-items:center;padding-top:8px;color:#ccc;font-size:20px}
+</style></head><body>
+<div class="title">[Process Insight]</div>
+<div class="sub">[Process description]</div>
+<div class="flow">
+  <div class="step"><div class="num">01</div><div class="step-title">Step A</div><div class="step-desc">Description of first step</div></div>
+  <div class="arrow">→</div>
+  <div class="step"><div class="num">02</div><div class="step-title">Step B</div><div class="step-desc">Description of second step</div></div>
+  <div class="arrow">→</div>
+  <div class="step"><div class="num hi">03</div><div class="step-title">Step C</div><div class="step-desc">Critical step highlighted</div></div>
+  <div class="arrow">→</div>
+  <div class="step"><div class="num">04</div><div class="step-title">Step D</div><div class="step-desc">Final step</div></div>
+</div>
+<div class="source">Source: [Source]</div>
+</body></html>
