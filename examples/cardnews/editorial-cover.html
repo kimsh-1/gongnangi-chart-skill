@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080, initial-scale=1.0">
+  <title>0.25% - Context Engineering</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FAFAFA;
+      color: #111;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    body {
+      position: relative;
+      padding: 100px 72px 72px;
+    }
+
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #FF4444;
+      margin-bottom: 32px;
+    }
+
+    .number {
+      font-size: 198px;
+      line-height: 0.9;
+      font-weight: 900;
+      letter-spacing: -6px;
+      color: #FF4444;
+      margin: 0 0 24px;
+    }
+
+    .caption {
+      font-size: 13px;
+      line-height: 1.618;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 44px;
+    }
+
+    .headline {
+      margin: 0 0 42px;
+    }
+
+    .headline span {
+      display: block;
+    }
+
+    .headline .heavy {
+      font-size: 64px;
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: #111;
+    }
+
+    .headline .thin {
+      font-size: 64px;
+      line-height: 1.08;
+      font-weight: 100;
+      letter-spacing: -2px;
+      color: #CCC;
+    }
+
+    .body-copy {
+      width: 860px;
+      margin: 0 0 42px;
+    }
+
+    .body-copy p {
+      margin: 0 0 24px;
+    }
+
+    .body-copy .line-a {
+      font-size: 28px;
+      line-height: 45px;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .body-copy .line-b {
+      font-size: 24px;
+      line-height: 39px;
+      font-weight: 300;
+      color: #555;
+    }
+
+    .body-copy .line-c {
+      font-size: 26px;
+      line-height: 42px;
+      font-weight: 700;
+      color: #FF4444;
+    }
+
+    .rule {
+      width: 936px;
+      height: 8px;
+      background: #111;
+      margin: 0 0 34px;
+    }
+
+    .micro {
+      display: grid;
+      grid-template-columns: 292px 292px 292px;
+      column-gap: 30px;
+      margin-top: 0;
+    }
+
+    .micro div {
+      border-top: 8px solid #CCC;
+      padding-top: 18px;
+    }
+
+    .micro strong {
+      display: block;
+      font-size: 46px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .micro span {
+      display: block;
+      font-size: 13px;
+      line-height: 21px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #777;
+    }
+
+    .footer {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="label">prompt engineering limit</div>
+
+  <h1 class="number">0.25%</h1>
+
+  <div class="caption">500 tokens inside a 200k context window</div>
+
+  <h2 class="headline">
+    <span class="heavy">프롬프트</span>
+    <span class="thin">엔지니어링은</span>
+    <span class="heavy">끝났다</span>
+  </h2>
+
+  <section class="body-copy">
+    <p class="line-a">30분 공들인 프롬프트가 500토큰이라면, 전체 200K 컨텍스트의 0.25%뿐입니다.</p>
+    <p class="line-b">모델이 실제로 보는 대부분은 시스템 로그, 도구 출력, 문서 조각, 이전 대화입니다.</p>
+    <p class="line-c">이제 질문은 “어떻게 쓰나”보다 “무엇을 넣고 무엇을 빼나”에 가깝습니다.</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="micro">
+    <div>
+      <strong>200K</strong>
+      <span>context window</span>
+    </div>
+    <div>
+      <strong>500</strong>
+      <span>prompt tokens</span>
+    </div>
+    <div>
+      <strong>next</strong>
+      <span>context engineering</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>AI FUNDAMENTALS 01/03</span>
+    <span>@gongnangi</span>
+  </footer>
+</body>
+</html>

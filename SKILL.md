@@ -106,27 +106,63 @@ body{width:1080px;height:1350px;padding:80px 72px 60px;display:flex;flex-directi
 
 ---
 
-## Card News Structure (SCQA + Pyramid Hybrid)
+## Card News — 5 Design Themes
 
-Instagram 4:5 portrait (1080x1350), 8-9 slides per set.
+Instagram 4:5 portrait (1080x1350). 사용자가 디자인을 선택하면 해당 스타일로 전체 세트 생성.
 
-| Slide | Role | Template | Pattern |
-|-------|------|----------|---------|
-| 1 | Hook | hero-number or provocative claim | Big stat + title |
-| 2 | Situation | context + quote | Set the scene |
-| 3 | Complication | bar chart data | Show the problem |
-| 4 | Tension | A vs B comparison | "Not X, but Y" |
-| 5 | Pivot | centered quote | Key turning point |
-| 6-7 | Evidence | framework/data cards | One insight per slide |
-| 8 | Synthesis | layer diagram | "So What" takeaway |
-| 9 | CTA | series list + action | Save/follow |
+### 디자인 선택
 
-### Card News Rules
-- Mobile text: body 24px+, title 40px+, hero 72px+
-- Max 20% text per slide
-- Golden ratio line height (x1.618) for Korean text
-- @handle at bottom of every slide
-- Consistent visual system across all slides
+| # | Theme | Background | Accent | Layout | Feel |
+|---|-------|-----------|--------|--------|------|
+| 1 | **editorial** | #FAFAFA 라이트 | #FF4444 | 좌측정렬 비대칭 | 매거진 |
+| 2 | **impact** | #0A0A0A 다크 | #c0392b | 중앙정렬 | 극적 임팩트 |
+| 3 | **grid** | #F0EBE3 + #2C2C2C | #8B6F4E | 좌우 2단 분할 | 구조적 |
+| 4 | **dark-slim** | #0A0A0A 다크 | #c0392b | 좌측정렬 | 슬림 차트 |
+| 5 | **minimal** | #F5F5F5 라이트 | #c0392b | 중앙정렬 | 흑백 미니멀 |
+
+기본값: `impact` (디자인 미지정 시)
+
+### 공통 타이포그래피 규칙
+
+```
+핵심 숫자: 160-200px, weight 900, letter-spacing -6px
+제목 핵심: 48-56px, weight 900
+제목 연결어: 같은 크기, weight 100-300 (대비)
+본문: 22-28px, weight 300-500, line-height * 1.618
+라벨: 11-13px, letter-spacing 3-5px, uppercase
+```
+
+- 한 줄마다 다른 크기/굵기/색상 (같은 스타일 3줄 연속 금지)
+- 콘텐츠가 캔버스의 70%+ 차지
+- padding: 상단 100px, 좌우 72px, 하단 72px
+- safe zone: 상하 135px (인스타 그리드 잘림 방지)
+- 하단: 좌측 시리즈명 + 우측 @핸들
+
+### 공통 바 차트 규칙 (슬림 스타일)
+
+```css
+.bar-track{height:6px;background:#f5f5f5}  /* 라이트 */
+.bar-track{height:6px;background:#1A1A1A}  /* 다크 */
+.bar-accent{background:#c0392b}
+.bar-mid{background:#888}
+.bar-light{background:#CCC}
+```
+
+### 슬라이드 구조 (SCQA + Pyramid)
+
+| Slide | Role | Content |
+|-------|------|---------|
+| cover | Hook | 핵심 숫자 + 제목 + 설명 |
+| data | Complication | 슬림 바 차트 + "왜 한계인가" 설명 |
+| quote | Pivot | 핵심 인용구, 줄마다 굵기/색상 대비 |
+| framework | Evidence | 프레임워크/축, 번호+이름+설명 계층 |
+
+### 금지사항
+
+- border-radius, box-shadow 금지
+- border로 박스 만들기 금지 (구분선 border-top/bottom만 허용)
+- margin:auto로 빈 공간 분배 금지
+- 같은 스타일 텍스트 3줄 연속 금지
 
 ---
 

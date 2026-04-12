@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1350, initial-scale=1.0">
+  <title>0.25% - Cover</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      padding: 0;
+      display: flex;
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #2C2C2C;
+      background: #F0EBE3;
+    }
+
+    .left {
+      width: 440px;
+      height: 1350px;
+      background: #2C2C2C;
+      color: #F0EBE3;
+      padding: 54px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .right {
+      flex: 1;
+      height: 1350px;
+      background: #F0EBE3;
+      padding: 54px 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .topbar,
+    .bottombar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .left .topbar,
+    .left .bottombar {
+      color: #F0EBE3;
+    }
+
+    .right .topbar,
+    .right .bottombar {
+      color: #8B6F4E;
+    }
+
+    .tag {
+      border-top: 4px solid #8B6F4E;
+      padding-top: 12px;
+    }
+
+    .number-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .number {
+      font-size: 152px;
+      line-height: 0.9;
+      font-weight: 900;
+      color: #8B6F4E;
+      letter-spacing: 0;
+    }
+
+    .metric {
+      width: 100%;
+      border-top: 2px solid #8B6F4E;
+      border-bottom: none;
+      padding: 28px 0;
+      font-size: 28px;
+      line-height: 1.618;
+      font-weight: 500;
+    }
+
+    .title {
+      font-size: 50px;
+      line-height: 1.16;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .title .thin {
+      display: block;
+      font-weight: 100;
+      color: #8B6F4E;
+    }
+
+    .copy {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      font-size: 22px;
+      line-height: 1.618;
+      font-weight: 400;
+    }
+
+    .copy strong {
+      color: #8B6F4E;
+      font-weight: 900;
+    }
+
+    .rule {
+      height: 10px;
+      background: #8B6F4E;
+      width: 100%;
+      margin: 44px 0;
+    }
+  </style>
+</head>
+<body>
+  <section class="left">
+    <div class="topbar">
+      <span class="tag">AI ISSUE</span>
+      <span>01</span>
+    </div>
+    <div class="number-wrap">
+      <div class="number">0.25%</div>
+      <div class="metric">작아 보이는 숫자가 업무 방식 전체를 바꾸는 시작점이 된다.</div>
+    </div>
+    <div class="bottombar">
+      <span>2026.04</span>
+      <span>@gongnangi</span>
+    </div>
+  </section>
+  <section class="right">
+    <div class="topbar">
+      <span>GRID CARDNEWS</span>
+      <span>ISSUE 01</span>
+    </div>
+    <main>
+      <h1 class="title">AI가 만든 변화는<br><span class="thin">작은 비율에서 먼저 보인다</span></h1>
+      <div class="rule"></div>
+      <div class="copy">
+        <p><strong>0.25%</strong>는 무시하기 쉬운 수치지만, 반복되는 업무에서는 방향을 바꾸는 신호가 된다.</p>
+        <p>도구가 결과물을 대신 만들기 시작하면 사람의 역할은 실행보다 판단과 조율에 가까워진다.</p>
+        <p>오늘의 질문은 단순하다. AI가 얼마나 대체했는가보다, 어떤 단계가 이미 도구의 출력으로 이동했는가다.</p>
+        <p>그 이동을 읽는 기준이 다음 장의 <strong>도구출력 80%</strong>와 4축 프레임워크다.</p>
+      </div>
+    </main>
+    <div class="bottombar">
+      <span>2026.04</span>
+      <span>@gongnangi</span>
+    </div>
+  </section>
+</body>
+</html>
