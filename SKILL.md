@@ -1,17 +1,18 @@
 ---
 name: consulting-chart
-description: "McKinsey/Bain style chart + card news + animated video generator. Static charts (960px), Instagram card news (1080x1350), CSS animation capture to MP4/GIF/APNG."
+description: "공냥이 시각 콘텐츠 스킬 — 컨설팅 차트, 인스타 카드뉴스, 애니메이션 영상을 HTML/CSS 코드로 생성. 5가지 카드뉴스 디자인 테마 선택 가능."
 allowed-tools: [Bash, Write, Read, Edit]
 ---
 
-# Gongnangi Chart Skill — Consulting Style Visual Content
+# 공냥이 시각 콘텐츠 스킬
 
-## Overview
+3가지 기능을 선택해서 사용:
 
-3개 출력 모드:
-1. **Static Chart** — 보고서용 960x500 HTML → PNG
-2. **Card News** — 인스타용 1080x1350 HTML → PNG (8-9장 세트)
-3. **Animation** — CSS 애니메이션 HTML → 프레임 캡처 → MP4/GIF/APNG
+| 기능 | 설명 | 사용법 |
+|------|------|--------|
+| **공냥이 차트** | 컨설팅 스타일 데이터 차트 (960x500 PNG) | `/consulting-chart 차트 만들어줘` |
+| **공냥이 카드뉴스** | 인스타 카드뉴스 5가지 디자인 (1080x1350 PNG) | `/consulting-chart 카드뉴스 만들어줘` |
+| **공냥이 영상** | Remotion 애니메이션 차트 (MP4/GIF) | `/consulting-chart 영상 만들어줘` |
 
 ---
 
@@ -163,6 +164,30 @@ Instagram 4:5 portrait (1080x1350). 사용자가 디자인을 선택하면 해�
 - border로 박스 만들기 금지 (구분선 border-top/bottom만 허용)
 - margin:auto로 빈 공간 분배 금지
 - 같은 스타일 텍스트 3줄 연속 금지
+
+### 렌더 후 피드백 루프 (필수)
+
+카드뉴스 HTML을 PNG로 렌더한 후 반드시 다음 검증을 수행:
+
+**1. 잘림 체크**
+```bash
+# 2배 높이로 렌더하여 하단 잘림 확인
+CHROME --screenshot=check.png --window-size=1080,2700 file.html
+# check.png 파일 크기가 정상 렌더의 1.5배 이상이면 OVERFLOW
+```
+
+**2. 시각 확인**
+렌더된 PNG를 Read로 열어서 다음 확인:
+- 텍스트가 잘 보이는가 (다크 배경에서 #555 이하 색상은 안 보임 → #999+ 사용)
+- 하단 빈 공간이 30%+ 이면 폰트를 키우거나 내용 추가
+- 바 차트가 기존 슬림 스타일(6px)과 일치하는가
+- border로 만든 박스가 없는가
+
+**3. 실패 시 자동 수정**
+- OVERFLOW → padding 줄이거나 font-size 줄이기
+- 텍스트 안 보임 → 색상 올리기 (#555 → #999)
+- 빈 공간 과다 → font-size 키우기 또는 설명 추가
+- 수정 후 재렌더 → 재검증 (최대 3회 반복)
 
 ---
 
