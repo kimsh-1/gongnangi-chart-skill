@@ -174,4 +174,4 @@ gongnangi-chart-skill/
 
 ## 라이선스
 
-MIT
+[MIT](LICENSE)
