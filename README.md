@@ -59,7 +59,7 @@ React + Remotion으로 차트 애니메이션을 MP4/GIF로 렌더링.
 ## 설치
 
 ```bash
-git clone https://github.com/kimsh-1/gongnangi-chart-skill.git
+git clone https://github.com/gongnyang/gongnangi-chart-skill.git
 cd gongnangi-chart-skill
 bash install.sh
 ```
